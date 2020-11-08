@@ -18,12 +18,13 @@ object CollectBatches {
       .getOrCreate()
 
     // helper objects needed for creating the optimizer
-    val catalogManager = SimpleAnalyzer.catalogManager // CatalogManager itself has private visibility now
     val sqlConf = new SQLConf().copy(SQLConf.CASE_SENSITIVE -> true)
     val catalog = new SessionCatalog(new InMemoryCatalog, FunctionRegistry.builtin, sqlConf)
-    // Creating a Spark optimizer object:
-    val myOptimizer = new SparkOptimizer(catalogManager, catalog, session.experimental)
+    // val myOptimizer = new SparkOptimizer(catalog, session.experimental) // when using Spark 2.X
+    val catalogManager = SimpleAnalyzer.catalogManager // CatalogManager itself has private visibility in Spark 3
 
+    // Creating a Spark optimizer object and collecting batches
+    val myOptimizer = new SparkOptimizer(catalogManager, catalog, session.experimental)
     val batchesInfo: Seq[(String, Seq[Rule[LogicalPlan]], myOptimizer.Strategy)] = myOptimizer.batches.map(batch => {
       (batch.name, batch.rules, batch.strategy)
     })

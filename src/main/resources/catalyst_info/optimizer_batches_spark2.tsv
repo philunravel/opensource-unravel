@@ -1,0 +1,110 @@
+Batch Name (Spark 2.4.7)	Rule Name	Rule Strategy
+Eliminate Distinct	org.apache.spark.sql.catalyst.optimizer.EliminateDistinct	Once
+Finish Analysis	org.apache.spark.sql.catalyst.analysis.EliminateSubqueryAliases	Once
+Finish Analysis	org.apache.spark.sql.catalyst.analysis.EliminateView	Once
+Finish Analysis	org.apache.spark.sql.catalyst.optimizer.ReplaceExpressions	Once
+Finish Analysis	org.apache.spark.sql.catalyst.optimizer.ComputeCurrentTime	Once
+Finish Analysis	org.apache.spark.sql.catalyst.optimizer.GetCurrentDatabase	Once
+Finish Analysis	org.apache.spark.sql.catalyst.optimizer.RewriteDistinctAggregates	Once
+Finish Analysis	org.apache.spark.sql.catalyst.optimizer.ReplaceDeduplicateWithAggregate	Once
+Union	org.apache.spark.sql.catalyst.optimizer.CombineUnions	Once
+LocalRelation early	org.apache.spark.sql.catalyst.optimizer.ConvertToLocalRelation	FixedPoint(100)
+LocalRelation early	org.apache.spark.sql.catalyst.optimizer.PropagateEmptyRelation	FixedPoint(100)
+Pullup Correlated Expressions	org.apache.spark.sql.catalyst.optimizer.PullupCorrelatedPredicates	Once
+Subquery	org.apache.spark.sql.catalyst.optimizer.Optimizer$OptimizeSubqueries	Once
+Replace Operators	org.apache.spark.sql.catalyst.optimizer.RewriteExceptAll	FixedPoint(100)
+Replace Operators	org.apache.spark.sql.catalyst.optimizer.RewriteIntersectAll	FixedPoint(100)
+Replace Operators	org.apache.spark.sql.catalyst.optimizer.ReplaceIntersectWithSemiJoin	FixedPoint(100)
+Replace Operators	org.apache.spark.sql.catalyst.optimizer.ReplaceExceptWithFilter	FixedPoint(100)
+Replace Operators	org.apache.spark.sql.catalyst.optimizer.ReplaceExceptWithAntiJoin	FixedPoint(100)
+Replace Operators	org.apache.spark.sql.catalyst.optimizer.ReplaceDistinctWithAggregate	FixedPoint(100)
+Aggregate	org.apache.spark.sql.catalyst.optimizer.RemoveLiteralFromGroupExpressions	FixedPoint(100)
+Aggregate	org.apache.spark.sql.catalyst.optimizer.RemoveRepetitionFromGroupExpressions	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PushProjectionThroughUnion	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ReorderJoin	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.EliminateOuterJoin	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PushPredicateThroughJoin	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PushDownPredicate	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.LimitPushDown	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ColumnPruning	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CollapseRepartition	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CollapseProject	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CollapseWindow	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineFilters	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineLimits	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineUnions	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.NullPropagation	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ConstantPropagation	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.FoldablePropagation	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.OptimizeIn	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ConstantFolding	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ReorderAssociativeOperator	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.LikeSimplification	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.BooleanSimplification	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyConditionals	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RemoveDispensableExpressions	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyBinaryComparison	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PruneFilters	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.EliminateSorts	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyCasts	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyCaseConversionExpressions	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RewriteCorrelatedScalarSubquery	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.EliminateSerialization	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RemoveRedundantAliases	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RemoveRedundantProject	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyExtractValueOps	FixedPoint(100)
+Operator Optimization before Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineConcats	FixedPoint(100)
+Infer Filters	org.apache.spark.sql.catalyst.optimizer.InferFiltersFromConstraints	Once
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PushProjectionThroughUnion	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ReorderJoin	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.EliminateOuterJoin	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PushPredicateThroughJoin	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PushDownPredicate	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.LimitPushDown	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ColumnPruning	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CollapseRepartition	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CollapseProject	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CollapseWindow	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineFilters	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineLimits	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineUnions	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.NullPropagation	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ConstantPropagation	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.FoldablePropagation	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.OptimizeIn	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ConstantFolding	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.ReorderAssociativeOperator	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.LikeSimplification	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.BooleanSimplification	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyConditionals	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RemoveDispensableExpressions	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyBinaryComparison	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.PruneFilters	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.EliminateSorts	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyCasts	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyCaseConversionExpressions	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RewriteCorrelatedScalarSubquery	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.EliminateSerialization	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RemoveRedundantAliases	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.RemoveRedundantProject	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.SimplifyExtractValueOps	FixedPoint(100)
+Operator Optimization after Inferring Filters	org.apache.spark.sql.catalyst.optimizer.CombineConcats	FixedPoint(100)
+Join Reorder	org.apache.spark.sql.catalyst.optimizer.CostBasedJoinReorder	Once
+Remove Redundant Sorts	org.apache.spark.sql.catalyst.optimizer.RemoveRedundantSorts	Once
+Decimal Optimizations	org.apache.spark.sql.catalyst.optimizer.DecimalAggregates	FixedPoint(100)
+Object Expressions Optimization	org.apache.spark.sql.catalyst.optimizer.EliminateMapObjects	FixedPoint(100)
+Object Expressions Optimization	org.apache.spark.sql.catalyst.optimizer.CombineTypedFilters	FixedPoint(100)
+LocalRelation	org.apache.spark.sql.catalyst.optimizer.ConvertToLocalRelation	FixedPoint(100)
+LocalRelation	org.apache.spark.sql.catalyst.optimizer.PropagateEmptyRelation	FixedPoint(100)
+Extract PythonUDF From JoinCondition	org.apache.spark.sql.catalyst.optimizer.PullOutPythonUDFInJoinCondition	Once
+Check Cartesian Products	org.apache.spark.sql.catalyst.optimizer.CheckCartesianProducts	Once
+RewriteSubquery	org.apache.spark.sql.catalyst.optimizer.RewritePredicateSubquery	Once
+RewriteSubquery	org.apache.spark.sql.catalyst.optimizer.ColumnPruning	Once
+RewriteSubquery	org.apache.spark.sql.catalyst.optimizer.CollapseProject	Once
+RewriteSubquery	org.apache.spark.sql.catalyst.optimizer.RemoveRedundantProject	Once
+UpdateAttributeReferences	org.apache.spark.sql.catalyst.optimizer.UpdateNullabilityInAttributeReferences	Once
+Optimize Metadata Only Query	org.apache.spark.sql.execution.OptimizeMetadataOnlyQuery	Once
+Extract Python UDFs	org.apache.spark.sql.execution.python.ExtractPythonUDFFromAggregate	Once
+Extract Python UDFs	org.apache.spark.sql.execution.python.ExtractPythonUDFs	Once
+Prune File Source Table Partitions	org.apache.spark.sql.execution.datasources.PruneFileSourcePartitions	Once
+Parquet Schema Pruning	org.apache.spark.sql.execution.datasources.parquet.ParquetSchemaPruning	Once

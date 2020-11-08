@@ -12,8 +12,10 @@ object CollectStrategies {
       .appName("Exploring Spark Planner strategies")
       .getOrCreate()
 
-    val planner = new SparkPlanner(session, session.sessionState.conf, session.sessionState.experimentalMethods)
-    val strategies: Seq[SparkStrategy] = planner.strategies
+    // when using Spark 2.X:
+    // val myPlanner = new SparkPlanner(session.sparkContext, session.sessionState.conf, session.sessionState.experimentalMethods)
+    val myPlanner = new SparkPlanner(session, session.sessionState.conf, session.sessionState.experimentalMethods)
+    val strategies: Seq[SparkStrategy] = myPlanner.strategies
     strategies.foreach(println)
   }
 
